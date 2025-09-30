@@ -1,0 +1,60 @@
+.heading {
+  position: relative;
+  z-index: -2;
+  width: 80%;
+  margin: auto;
+  overflow-x: hidden;
+}
+.heading .container {
+  position: absolute;
+  top: 30%;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.heading h2 {
+  font-size: 40px;
+  text-transform: capitalize;
+  height: 15vh;
+  color: #fff;
+}
+.heading button {
+  color: white;
+  font-weight: 400;
+  padding: 5px 30px;
+  word-spacing: 5px;
+}
+.heading a {
+  color: #31b675;
+  cursor: pointer;
+}
+.heading span {
+  text-transform: capitalize;
+  word-spacing: 30px;
+}
+.background img {
+  min-width: 100%;
+  max-height: 60vh;
+}
+@media screen and (max-width: 1250px) {
+  .heading {
+    width: 90%;
+  }
+  .heading h2 {
+    font-size: 30px;
+    height: 8vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .heading {
+    width: 100%;
+  }
+  .heading h2 {
+    font-size: 20px;
+  }
+  .background img {
+    max-height: 45vh;
+  }
+}

@@ -1,0 +1,177 @@
+.popular {
+  position: relative;
+}
+.popular {
+  background-color: #f5fbf9d1;
+  border-radius: 30px;
+  margin: 35px 0;
+  padding: 25px;
+}
+.popular img {
+  width: 100%;
+  height: auto;
+  transition: 1.8s;
+}
+.popular .card {
+  margin: 10px;
+}
+.popular .item {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 10px;
+}
+.popular .imgae {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.popular .cont-inside {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #fff;
+}
+.popular .imgae svg label {
+  margin-left: 10px;
+  font-weight: normal;
+}
+.popular .details {
+  text-align: center;
+}
+.popular .add button {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.popular .cards:hover .imgae img {
+  transform: scale(1.5, 1.5);
+  filter: brightness(0.6);
+}
+.popular .cards:hover .add button {
+  top: 45%;
+  position: absolute;
+  font-size: 20px;
+  left: 45%;
+  color: #fff;
+  border-radius: 35px;
+  background-color: #121111;
+  padding: 8px 6px;
+  cursor: pointer;
+  display: flex;
+}
+.popular .add button:active {
+  transform: scale(0.7);
+}
+.popular .rate {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: grey;
+}
+.popular .rate svg {
+  margin: 2px;
+}
+.popular .cards h3 {
+  font-size: 20px;
+  color: #31b675;
+  position: relative;
+  margin-bottom: 30px;
+}
+.popular .cards h3::after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 45%;
+  height: 1px;
+  width: 30px;
+  background: black;
+}
+.popular .cards h3::before {
+  position: absolute;
+  content: "";
+  bottom: -20px;
+  left: 40%;
+  height: 1px;
+  width: 60px;
+  background: black;
+}
+.popular .cards h4 {
+  color: #31b675;
+}
+.popular .cards h4 span {
+  color: grey;
+  font-weight: 300;
+  font-size: 15px;
+}
+.popular .content {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 1250px) {
+  .popular {
+    padding: 25px 45px;
+  }
+  .popular .cards h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .popular .cards h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .popular .cards h4 span {
+    font-size: 9px;
+  }
+  .popular .content {
+    margin-bottom: 20px;
+  }
+  .popular .cards h3::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  .content .slick-slide {
+    width: 11% !important;
+    height: 25vh;
+  }
+  .popular {
+    margin: 0;
+    padding: 0;
+  }
+}
+/*----- control btn -------*/
+.popular .control-btn .next,
+.popular .control-btn .prev {
+  top: 100%;
+  background: none;
+}
+.popular .control-btn .prev {
+  left: 45%;
+}
+.popular .control-btn .next {
+  right: 45%;
+}
+.popular .control-btn .prev svg,
+.popular .control-btn .next svg {
+  background: rgba(0, 0, 0, 0.05);
+  color: black;
+  font-size: 15px;
+  transition: 0.5s;
+}
+.popular .control-btn .prev svg:hover,
+.popular .control-btn .next svg:hover {
+  background: #31b675;
+  color: white;
+}
+@media screen and (max-width: 1150px) {
+  .popular .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 550px) {
+  .popular .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

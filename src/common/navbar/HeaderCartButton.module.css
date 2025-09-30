@@ -1,0 +1,76 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  color: #283a5e;
+  padding: 0.75rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+  width: 100%;
+}
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.5rem;
+}
+
+.badge {
+  color: #283a5e;
+  border: 1px solid #31b675;
+  padding: 2px 6px;
+  border-radius: 25px;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+.btn {
+  display: flex;
+}
+.btn .icon svg {
+  width: 100%;
+}
+.bump {
+  animation: bump 300ms ease-out;
+}
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 1250px) {
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  .badge {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .btn .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  .badge {
+    padding: 0px 3px;
+    border-radius: 25px;
+    margin-left: 5px;
+    margin-top: 4px;
+    font-weight: 100;
+  }
+}

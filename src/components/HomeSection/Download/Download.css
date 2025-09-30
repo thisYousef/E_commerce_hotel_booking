@@ -1,0 +1,61 @@
+.download {
+    background-color: #31b675;
+    color: white;
+    height: fit-content;
+    padding: 50px 0;
+  }
+  .download h2 {
+    font-size: 40px;
+  }
+  .download h2, .download span {
+    color: #fff;
+  }
+  .download ul {
+    margin: 20px 0;
+  }
+  .download ul li {
+    margin: 10px 0;
+  }
+  .download .row img {
+    margin-right: 20px;
+  }
+  .download .row {
+    position: relative;
+  }
+  .download .row2 {
+    text-align: center;
+  }
+  .download .image {
+    position: absolute;
+    left: 20%;
+    right: 0;
+  }
+  @media screen and (max-width: 768px) {
+    .download h2 {
+      font-size: 18px;
+    }
+    .download span {
+      font-size: 14px;
+    }
+    .download ul li {
+      font-size: 13px;
+  }
+    .download .flex_space {
+      flex-direction: column;
+      padding: 10px;
+    }
+    .download .row {
+      width: 100%;
+    }
+    .download .row2 {
+      display: none;
+    }
+    .download {
+      height: 40vh;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .download .row img {
+      width: 25%;
+    }
+  }

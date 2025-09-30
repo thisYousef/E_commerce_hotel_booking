@@ -1,0 +1,116 @@
+.aboutCard {
+  margin-top: 40px;
+}
+.aboutCard .row1 {
+  padding: 50px 180px;
+}
+.aboutCard h1 {
+  font-size: 50px;
+}
+.aboutCard p {
+  margin-top: 20px;
+  font-weight: 300;
+}
+.aboutCard .row1 {
+  padding-right: 30px;
+}
+.aboutCard .row.image,
+.aboutCard .image {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.aboutCard .image img {
+  width: 50%;
+  height: fit-content;
+  box-shadow: 0 10px 20px 0 rgba(50, 50, 50, 0.3);
+}
+.image img:first-of-type {
+  margin-left: -10%;
+}
+.aboutCard .control-btn button {
+  left: 40%;
+}
+.aboutCard .control-btn svg {
+  font-size: 20px;
+}
+.aboutCard img {
+  width: 100%;
+}
+.aboutCard .control-btn::before {
+  content: "";
+  position: absolute;
+  bottom: 2%;
+  left: 15%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 60%;
+  height: 30px;
+  border-radius: 5px;
+  z-index: -1;
+}
+.features .flex_space {
+  flex-direction: row-reverse;
+}
+.features img {
+  width: 90%;
+}
+.features .control-btn,
+.features .image::after,
+.features .image::before,
+.features .control-btn::before {
+  display: none;
+}
+.features h2 span {
+  color: #31b675;
+}
+@media screen and (max-width: 1250px) {
+  .aboutCard .row1 {
+    padding: 30px 60px;
+  }
+  .aboutCard h1 {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .features .flex_space,
+  .aboutCard {
+    flex-direction: column;
+  }
+  .aboutCard .image::after,
+  .aboutCard .image::before,
+  .aboutCard .control-btn::before {
+    display: none;
+  }
+  .aboutCard h1 {
+    font-size: 20px;
+  }
+  .aboutCard p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .aboutCard .row {
+    width: 100%;
+  }
+  .aboutCard .image {
+    margin-top: 50px;
+    justify-content: center;
+  }
+  .aboutCard img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .aboutCard .row1 {
+    padding: 10px 20px;
+  }
+  .aboutCard h1 {
+    font-size: 14px;
+  }
+  .aboutCard p {
+    font-size: 10px;
+    margin-top: 5px;
+    font-weight: 100;
+    line-height: 17px;
+  }
+}

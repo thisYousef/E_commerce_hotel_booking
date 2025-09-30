@@ -1,0 +1,271 @@
+.form {
+    box-shadow: 0 10px 40px 0 rgba(50,50,50,.1);
+    padding: 50px 20px 35px;
+    margin: 50px 20px;
+}
+.form form {
+    justify-content: space-evenly;
+}
+.select:last-child {
+    text-align: center;
+    margin-top: -30px;
+}
+.select h2 {
+    font-size: 22px;
+}
+.select h5 {
+    font-size: 18px;
+    color: #687693;
+}
+.select button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #31b675;
+    color: #fff;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    width: 95%;
+}
+.select span {
+    margin-bottom: 20px;
+    display: block;
+}
+.select h5 span {
+    color: #31b675;
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.description {
+    margin: 50px auto;
+    width: 75%;
+    padding: 0 20px;
+}
+.description h2 {
+    font-size: 35px;
+    color: #283a5e;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 50px;
+}
+.description p {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+.description .wrap {
+    color: #384f7c;
+}
+.text ul li a::before, .text_one ul li a::before {
+    top: 7px;
+    content: "✓";
+    background: rgba(0,214,144,.2);
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    color: #00d690;
+    font-size: 14px;
+    padding: 8px;
+}
+.title h2, .reviews h2 {
+    font-size: 35px;
+    color: #283a5e;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 50px;
+}
+.details .parent {
+    display: flex;
+    margin: 40px;
+}
+.details .parent .text, .text_one {
+    width: 150%;
+    z-index: 4;
+    position: relative;
+    background-color: #fff;
+    padding: 35px;
+    margin: 20px 50px;
+    box-shadow: 0 10px 40px 0 rgba(50,50,50,.1);
+}
+.details .parent .text_one {
+    margin: 0 85px 0 -100%;
+    padding: 15px 35px;
+}
+.image img {
+    width: 50vw !important;
+}
+.details .img img {
+    max-width: 80%;
+    min-height: 430px;
+    position: relative;
+    z-index: 1;
+}
+.details ul li a {
+    color: #283a5e;
+    display: block;
+    position: relative;
+    padding: 7px 0 7px 20px;
+    font-size: 20px;
+}
+.reviews .review {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    margin: 0 0 10% 0;
+}
+.reviews .review .content {
+    padding: 10px 35px;
+}
+.reviews .content h3 {
+    font-size: 22px;
+    color: #283a5e;
+    margin: 0 25px 25px 0;
+}
+.reviews .content p {
+    line-height: 35px;
+    padding-right: 35px;
+}
+.reviews .review img {
+    width: 300px;
+    border-radius: 10%;
+}
+@media screen and (max-width: 1200px) {
+    .select h2 {
+        font-size: 15px;
+    }   
+    .select h5 {
+        font-size: 14px;
+    }
+    .select h5 span {
+        font-size: 30px;
+    }
+    .select button {
+        font-size: 15px;
+    }
+    .reviews .review {
+        margin: 0 0 15% 0;
+}
+}
+@media screen and (max-width: 950px) {
+    .reviews .content h3 {
+    margin: 0 15px 10px 0;
+}
+    .reviews .content p {
+    line-height: 20px;
+    padding-right: 10px;
+    display: -webkit-box; 
+            -webkit-box-orient: vertical; 
+            -webkit-line-clamp: 3; 
+            overflow: hidden; 
+            text-overflow: ellipsis;
+}
+    .details .img img {
+        max-width: 40vw;
+        min-height: 350px;
+    }
+    .details .parent .text, .text_one {
+        width: 110%;
+        padding: 20px;
+        margin: 20px 35px;
+    }
+    .title h2, .reviews h2 {
+        font-size: 22px;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+    .text ul li a::before, .text_one ul li a::before {
+        font-size: 12px;
+        padding: 4px 7px;
+    }
+    .details .parent .text_one {
+        margin: 0 60px 0 -10%;
+        padding: 10px 25px;
+    }
+    .details ul li a {
+        padding: 3px 0 4px 5px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .form {
+    padding: 20px 10px 15px;
+    margin: 20px 10px;
+    }
+     .select h5 span {
+        font-size: 16px;
+    }
+    .select span {
+    margin-bottom: 10px;
+    font-size: 16px;
+    }
+    .image img {
+        width: 100vw !important;
+        height: 50vh;
+    }
+    .description {
+    margin: 20px auto;
+    width: 85%;
+    padding: 0 20px;
+}
+.description h2 {
+    font-size: 22px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.description p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.reviews .review img {
+    width: 200px;
+}
+.reviews .review .content {
+    padding: 5px 15px;
+}
+.reviews .content p {
+    font-size: 14px;
+}
+}
+@media screen and (max-width: 600px) {
+    .form {
+    display: none;
+    }
+    .details .parent .text, .text_one {
+        width: 160%;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 450px) {
+    .details .parent {
+    margin: 20px -20px;
+}
+.details ul li a {
+        font-size: 12px;
+    }
+    .description {
+    margin: 10px auto;
+    width: 95%;
+    padding: 0 10px;
+}
+    .description h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+    .description p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}  
+    .details .parent .text, .text_one {
+        width: 140%;
+        padding: 20px 10px;
+    }
+    .text ul li a::before, .text_one ul li a::before {
+        padding: 1px 3px;
+    } 
+    .details .img img {
+        max-width: 50vw;
+        min-height: 300px;
+    }
+}
