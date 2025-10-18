@@ -1,7 +1,7 @@
 import "./Download.css"
 
 const Download = () => {
-    return ( 
+    return (
         <>
             <section className="download top">
                 <div className="container flex_space">
@@ -16,17 +16,17 @@ const Download = () => {
                             <li>&#10003; No booking or credit card fees</li>
                         </ul>
                         <div className="img flex">
-                            <img src={require('../../../images/Download/appstore-button.png')} alt="App-Store " loading="lazy"/>
-                            <img src={require('../../../images/Download/google-play-button.png')} alt="google-play" loading="lazy"/>
+                            <img src={require('./../../../images/Download/appstore-button.png')} alt="App-Store " loading="lazy" />
+                            <img src={require('./../../../images/Download/google-play-button.png')} alt="google-play" loading="lazy" />
                         </div>
                     </div>
                     <div className="row row2">
-                        <img src={require('../../../images/Download/app-image-1.png')} alt="AppImage" loading="lazy"/>
+                        <img src={require('./../../../images/Download/app-image-1.png')} alt="AppImage" loading="lazy" />
                     </div>
                 </div>
             </section>
         </>
-     );
+    );
 }
- 
+
 export default Download;

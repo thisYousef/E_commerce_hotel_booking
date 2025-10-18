@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { Stack, TextField, Button } from "@mui/material";
 import Swal from 'sweetalert2';
-import { AuthProvider, useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import Background from "./Background";
 
 const Register = () => {
@@ -81,95 +81,94 @@ const Register = () => {
 
   return (
     <>
-      <AuthProvider>
-        <section className="forms">
-          <div className="flex">
-            <Background />
-            <motion.div
-              className="sign-box"
-              initial="hidden"
-              animate="show"
-              viewport={{ once: true }}
-              variants={FADE_RIGHT_ANIMATION_VARIANTS}
-            >
-              <p>Don't have an account? Create your account, it takes less than a minute.</p>
-              <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                <Stack spacing={2} width={400}>
-                  <TextField
-                    type="text"
-                    label="Username"
-                    onChange={(e) => setValue("Username", e.target.value)}
-                    id="username"
-                    {...register("Username", {
-                      required: {
-                        value: true,
-                        message: "Username required",
-                      },
-                    })}
-                    placeholder="Type your username"
-                  />
-                  <p className="error">{errors.Username?.message}</p>
 
-                  <TextField
-                    type="email"
-                    label="Email"
-                    id="email"
-                    onChange={(e) => setValue("Email", e.target.value)}
-                    {...register("Email", {
-                      required: "An email address is required",
-                      pattern: {
-                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                        message: "Invalid email format",
-                      },
-                    })}
-                    placeholder="Type your email"
-                  />
-                  <p className="error">{errors.Email?.message}</p>
+      <section className="forms">
+        <div className="flex">
+          <Background />
+          <motion.div
+            className="sign-box"
+            initial="hidden"
+            animate="show"
+            viewport={{ once: true }}
+            variants={FADE_RIGHT_ANIMATION_VARIANTS}
+          >
+            <p>Don't have an account? Create your account, it takes less than a minute.</p>
+            <form onSubmit={handleSubmit(onSubmit)} noValidate>
+              <Stack spacing={2} width={400}>
+                <TextField
+                  type="text"
+                  label="Username"
+                  onChange={(e) => setValue("Username", e.target.value)}
+                  id="username"
+                  {...register("Username", {
+                    required: {
+                      value: true,
+                      message: "Username required",
+                    },
+                  })}
+                  placeholder="Type your username"
+                />
+                <p className="error">{errors.Username?.message}</p>
 
-                  {/* Display Firebase email error if email is already in use */}
-                  {emailError && <p className="error">{emailError}</p>}
+                <TextField
+                  type="email"
+                  label="Email"
+                  id="email"
+                  onChange={(e) => setValue("Email", e.target.value)}
+                  {...register("Email", {
+                    required: "An email address is required",
+                    pattern: {
+                      value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                      message: "Invalid email format",
+                    },
+                  })}
+                  placeholder="Type your email"
+                />
+                <p className="error">{errors.Email?.message}</p>
 
-                  <TextField
-                    type="password"
-                    label="Password"
-                    id="Password"
-                    onChange={(e) => setValue("Password", e.target.value)}
-                    {...register("Password", {
-                      required: "A password is required",
-                      pattern: {
-                        value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/,
-                        message: "Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number",
-                      },
-                    })}
-                  />
-                  <p className="error">{errors.Password?.message}</p>
+                {/* Display Firebase email error if email is already in use */}
+                {emailError && <p className="error">{emailError}</p>}
 
-                  <TextField
-                    type="password"
-                    label="Confirm Password"
-                    id="ConfirmPassword"
-                    onChange={(e) => setValue("ConfirmPassword", e.target.value)}
-                    {...register("ConfirmPassword", {
-                      required: "Confirm password is required",
-                    })}
-                  />
-                  <p className="error">{errors.ConfirmPassword?.message}</p>
+                <TextField
+                  type="password"
+                  label="Password"
+                  id="Password"
+                  onChange={(e) => setValue("Password", e.target.value)}
+                  {...register("Password", {
+                    required: "A password is required",
+                    pattern: {
+                      value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/,
+                      message: "Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number",
+                    },
+                  })}
+                />
+                <p className="error">{errors.Password?.message}</p>
 
-                  {!passwordsMatch && <p className="error">Passwords do not match.</p>}
+                <TextField
+                  type="password"
+                  label="Confirm Password"
+                  id="ConfirmPassword"
+                  onChange={(e) => setValue("ConfirmPassword", e.target.value)}
+                  {...register("ConfirmPassword", {
+                    required: "Confirm password is required",
+                  })}
+                />
+                <p className="error">{errors.ConfirmPassword?.message}</p>
 
-                  <Button type="submit" disabled={formErrors} variant="contained" color="success">
-                    Submit
-                  </Button>
+                {!passwordsMatch && <p className="error">Passwords do not match.</p>}
 
-                  <p>
-                    Already have an account? <Link to="/">Log in</Link>
-                  </p>
-                </Stack>
-              </form>
-            </motion.div>
-          </div>
-        </section>
-      </AuthProvider>
+                <Button type="submit" disabled={formErrors} variant="contained" color="success">
+                  Submit
+                </Button>
+
+                <p>
+                  Already have an account? <Link to="/login">Log in</Link>
+                </p>
+              </Stack>
+            </form>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 };

@@ -25,24 +25,25 @@ const Home = () => {
     fetchData();
   }, []);
 
-    return ( 
-        <>
-          <section className='home-section'>
-              {loading ? <SkeletonLoader /> 
-              : <>
-              <Slide />
-              <HomeAbout />
-              <DestinationHome />
-              <MostPopular />
-              <News />
-              <Download />
-              <BasicTabs />
-              <Testimonial />
-              <Works />
-              <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
-              </>}
-          </section> 
-        </>
-     );
+  return (
+    <>
+      <section className='home-section'>
+        {loading ? <SkeletonLoader />
+          : <>
+
+            <Slide />
+            <HomeAbout />
+            <DestinationHome />
+            <MostPopular />
+            <News />
+            <Download />
+            <BasicTabs />
+            <Testimonial />
+            <Works />
+            <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
+          </>}
+      </section>
+    </>
+  );
 }
 export default Home;

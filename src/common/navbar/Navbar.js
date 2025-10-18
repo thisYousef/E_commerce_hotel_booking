@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import HeaderCartButton from './HeaderCartButton';
 import "./Navbar.css";
 import { useAuth } from '../../context/AuthContext';
+// import { useAuth } from '../../context/AuthContext';
 // import Search from '../../Search';
 
 const Navbar = ({ onShowCart }) => {
@@ -23,9 +24,10 @@ const Navbar = ({ onShowCart }) => {
     }
   };
 
-  const handleClick = () => (
-    setClick(!click));
-  const closeMobileMenu = () => setClick(false);
+  const handleClick = () => setClick(!click);
+  function closeMobileMenu() {
+    setClick(false);
+  }
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -56,7 +58,7 @@ const Navbar = ({ onShowCart }) => {
             <li>
               <div className='icon-wrapper'><div className='menu'>Menu</div></div>
             </li>
-            <li><NavLink to="/home" onClick={closeMobileMenu}
+            <li><NavLink to="/" onClick={closeMobileMenu}
               className={({ isActive }) => isActive ? "isActive" : ""}>
               <div className='icon-wrapper'> <FontAwesomeIcon icon={faHouse} /> </div> Home</NavLink>
             </li>
