@@ -14,7 +14,6 @@
 .icon {
   width: 1.35rem;
   height: 1.35rem;
-  margin-right: 0.5rem;
 }
 
 .badge {
@@ -22,7 +21,6 @@
   border: 1px solid #31b675;
   padding: 2px 6px;
   border-radius: 25px;
-  margin-left: 5px;
   margin-top: 5px;
   font-weight: bold;
 }
