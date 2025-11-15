@@ -15,6 +15,12 @@
   line-height: 1.42857;
   text-align: center;
   width: 100%;
+  justify-content: center;
+}
+.checkout {
+  margin: 10rem auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 .empty p {
   color: #272727c9;
@@ -33,6 +39,9 @@
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin: 1rem 0rem 1rem 1rem;
+}
+.actions .shopping {
+  background-color: #ffffff00;
 }
 
 .actions button:hover:not(.button--alt),

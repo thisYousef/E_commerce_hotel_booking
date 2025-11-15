@@ -18,7 +18,11 @@ const Cart = () => {
 
   const cartItemAddHandler = useCallback(
     (item) => {
-      cartCtx.addItem({ ...item, amount: 1 });
+      console.log(item);
+      if (item.amount < 3) {
+        cartCtx.addItem({ ...item, amount: 1 });
+      }
+
     },
     [cartCtx]
   );
@@ -46,13 +50,16 @@ const Cart = () => {
           </ul>
           <div className={classes.actions}>
             <button className={classes.button}>Check In</button>
+            <button className={classes.shopping}>Continue Shopping</button>
           </div>
         </>
       ) : (
-        <div className={classes.empty}>
-          <p>Your cart is currently empty.</p>
-          <p>Continue shopping.</p>
-        </div>
+        <>
+          <div className={classes.empty}>
+            <p>Your cart is currently empty.</p>
+            <p>Continue shopping.</p>
+          </div>
+        </>
       )}
     </Checkout>
   );
