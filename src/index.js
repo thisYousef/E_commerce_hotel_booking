@@ -21,10 +21,10 @@ const Login = lazy(() => import("./components/Login/Login"));
 const Register = lazy(() => import("./components/Login/Register"));
 const ForgotPass = lazy(() => import("./components/Login/ForgotPass"));
 const ErrorPage = lazy(() => import("./components/Error"));
-// const RootLayout = lazy(() => import("./components/Root"));
 const PrivateRoute = lazy(() => import("./components/Login/PrivateRoute"));
 const Dashboard = lazy(() => import("./components/Login/Dashboard"));
 const UpdateProfile = lazy(() => import("./components/Login/UpdateProfile"));
+const MainHotel = lazy(() => import("./components/hotels/mainHotel"));
 
 const loading = (
     <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
@@ -52,6 +52,7 @@ const router = createBrowserRouter([
             { path: "login", element: <Login /> },
             { path: "register", element: <Register /> },
             { path: "forgot", element: <ForgotPass /> },
+            { path: "hotels", element: <MainHotel /> },
 
             {
                 path: "/",
