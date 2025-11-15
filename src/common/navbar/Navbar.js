@@ -6,7 +6,8 @@ import { useState, useEffect } from 'react';
 import HeaderCartButton from './HeaderCartButton';
 import "./Navbar.css";
 import { useAuth } from '../../context/AuthContext';
-// import { useAuth } from '../../context/AuthContext';
+import { Avatar, Button, Menu, MenuItem } from '@mui/material';
+import Swal from 'sweetalert2';
 // import Search from '../../Search';
 
 const Navbar = ({ onShowCart }) => {
@@ -14,17 +15,32 @@ const Navbar = ({ onShowCart }) => {
   const [click, setClick] = useState(false);
   const { currentUser, logout } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleLogout = async () => {
     try {
       await logout();
+      Swal.fire({
+        text: "Logout successfully!",
+        icon: "success"
+      });
       navigate('/');
     } catch (error) {
       console.error("Failed to log out:", error);
     }
   };
 
-  const handleClick = () => setClick(!click);
+  function handleClick(e) {
+    setAnchorEl(e.currentTarget);
+    setClick(!click);
+  }
   function closeMobileMenu() {
     setClick(false);
   }
@@ -87,7 +103,30 @@ const Navbar = ({ onShowCart }) => {
             </li>
             {/* <li><Search/></li> */}
             <li>
-              {currentUser && <button onClick={handleLogout} className='logout-btn'>Logout</button>}
+              {currentUser && <>
+                <Button
+                  id="basic-button"
+                  aria-controls={open ? 'basic-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                >
+                  <Avatar src="/broken-image.jpg" />
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  slotProps={{
+                    list: {
+                      'aria-labelledby': 'basic-button',
+                    },
+                  }}
+                >
+                  <MenuItem onClick={handleLogout} className='logout-btn'>Logout</MenuItem>
+                </Menu>
+              </>}
             </li>
           </ul>
         </div>
