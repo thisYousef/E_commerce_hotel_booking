@@ -7,9 +7,9 @@ import News from '../HomeSection/New/News';
 import Download from '../HomeSection/Download/Download';
 import BasicTabs from '../HomeSection/Rooms/CustomTabPanel';
 import Testimonial from '../HomeSection/Testimonial/Testimonial';
-import Works from '../HomeSection/Works/Works';
 import { useEffect, useState } from 'react';
 import SkeletonLoader from '../../Skeleton';
+import Footer from '../../common/footer/Footer';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -39,7 +39,7 @@ const Home = () => {
             <Download />
             <BasicTabs />
             <Testimonial />
-            <Works />
+            <Footer />
             <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
           </>}
       </section>
