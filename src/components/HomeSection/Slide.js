@@ -87,69 +87,70 @@ const Slide = () => {
   }
   return (
     <>
-      <section className="container parent flex">
+      <section className="relative overflow-hidden group ">
         <div className="control-btn">
-          <button className="prev" onClick={prevSlide} aria-label="prev slide">
+          <button
+            className={`absolute top-1/2 z-40 transition-all duration-400 ease-in-out text-white p-3 text-base border border-emerald-500 rounded-full hover:bg-emerald-500 xl:p-2 xl:text-sm -left-[20%] group-hover:left-5`}
+            onClick={prevSlide}
+            aria-label="prev slide"
+          >
             <FontAwesomeIcon icon={faArrowLeft} />
           </button>
-          <button className="next" onClick={nextSlide} aria-label="next slide">
+          <button
+            className={`absolute top-1/2 z-40 transition-all duration-400 ease-in-out text-white p-3 text-base border border-emerald-500 rounded-full hover:bg-emerald-500 xl:p-2 xl:text-sm -right-[20%] group-hover:right-5`}
+            onClick={nextSlide}
+            aria-label="next slide"
+          >
             <FontAwesomeIcon icon={faArrowRight} />
           </button>
         </div>
-        {imagesApi.slice(current, current + 5).map((image, index) => (
-          <AnimatePresence initial={false} custom={current} key={image.id}>
+        <div
+          className="flex transition-transform duration-300 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}vw)` }}
+        >
+          {/* Map over the slides  */}
+          {imagesApi.slice(current, current + 5).map((image) => (
             <motion.div
-              className={index === current ? "slide active" : "slide"}
-              variants={variants1}
-              initial="enter"
-              animate="center"
-              exit="exit"
+              className="flex-shrink-0 w-screen relative"
+              key={image.id}
+
             >
-              <div className="image-container">
+              <div className="absolute inset-0 bg-gray-900 bg-opacity-30 rounded-[2rem] h-[99.6%] z-10"></div>
+
+              <div className="w-full">
                 <img
+                  className="h-[80vh] w-screen object-cover"
                   src={image.urls.regular}
                   alt={image.alt_description}
                   loading="lazy"
                 />
               </div>
-              <motion.div
-                className="slide-title"
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-              >
+              <motion.div className="absolute top-[30%] sm:top-[35%] px-[20%] pr-[42%] z-20">
                 <motion.h2
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
+                  className="text-white mb-6 text-[58px] xl:text-[35px] md:text-2xl md:leading-8 sm:text-lg sm:leading-4 sm:mt-[55px]"
                   variants={variants1}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   {titleText}
                 </motion.h2>
                 <motion.p
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
+                  className="text-white mb-6 md:text-sm md:leading-8 sm:text-[9px] sm:leading-4"
                   variants={variants1}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   {subtitleText}
                 </motion.p>
                 <motion.button
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
+                  className="btn hover:text-white md:p-2 md:text-xs sm:p-[2px_10px] sm:text-[8px] sm:mt-4"
                   variants={variants1}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="btn"
                 >
                   {buttonText}
                 </motion.button>
               </motion.div>
             </motion.div>
-          </AnimatePresence>
-        ))}
+          ))}
+        </div>
       </section>
     </>
   );

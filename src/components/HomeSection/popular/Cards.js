@@ -80,7 +80,7 @@ const Cards = () => {
                   <div className="imgae">
                     <img src={value.image} alt="img for hotel" loading="lazy" />
                     <div className="add">
-                      <button type='button' onClick={() => addToCartHandler(1, value.name, value.price, value.id, value.image)}><FontAwesomeIcon icon={faCartShopping} /></button>
+                      <button type='button' onClick={() => addToCartHandler(1, value.name, value.price, value.id, value.image)}>Add to Cart</button>
                     </div>
                     <div className="cont-inside">
                       <FontAwesomeIcon icon={faLocationDot} />
