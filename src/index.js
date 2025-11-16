@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
-import Search from "./Search";
 import Results from "./Results";
 import Cart from "./common/Cart/Cart";
 import "./App.css";
@@ -47,7 +46,6 @@ const router = createBrowserRouter([
             { path: "blog", element: <Blog /> },
             { path: "blogsingle/:id", element: <BlogSingle /> },
             { path: "dashboard/update-profile", element: <UpdateProfile /> },
-            { path: "search", element: <Search /> },
             { path: "results", element: <Results /> },
             { path: "login", element: <Login /> },
             { path: "register", element: <Register /> },
