@@ -39,10 +39,7 @@ const SkeletonLoader = () => {
           />
         </svg>
       </div>
-      {/* <motion.div className="skeleton skeleton-title" variants={skeletonVariants}></motion.div> */}
-      {/* <motion.div className="skeleton skeleton-text" variants={skeletonVariants}></motion.div> */}
-      {/* <motion.div className="skeleton skeleton-image" variants={skeletonVariants}></motion.div> */}
-      {/* </div> */}
+
     </motion.div>
   );
 };

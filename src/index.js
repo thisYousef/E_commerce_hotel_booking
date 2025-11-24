@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
-import Results from "./Results";
 import Cart from "./common/Cart/Cart";
 import "./App.css";
 
@@ -21,8 +20,6 @@ const Register = lazy(() => import("./components/Login/Register"));
 const ForgotPass = lazy(() => import("./components/Login/ForgotPass"));
 const ErrorPage = lazy(() => import("./components/Error"));
 const PrivateRoute = lazy(() => import("./components/Login/PrivateRoute"));
-const Dashboard = lazy(() => import("./components/Login/Dashboard"));
-const UpdateProfile = lazy(() => import("./components/Login/UpdateProfile"));
 const MainHotel = lazy(() => import("./components/hotels/mainHotel"));
 
 const loading = (
@@ -45,8 +42,6 @@ const router = createBrowserRouter([
             { path: "room-single", element: <RoomSingle /> },
             { path: "blog", element: <Blog /> },
             { path: "blogsingle/:id", element: <BlogSingle /> },
-            { path: "dashboard/update-profile", element: <UpdateProfile /> },
-            { path: "results", element: <Results /> },
             { path: "login", element: <Login /> },
             { path: "register", element: <Register /> },
             { path: "forgot", element: <ForgotPass /> },
@@ -57,7 +52,6 @@ const router = createBrowserRouter([
                 element: <PrivateRoute />,
                 children: [
                     { path: "checkout", element: <Cart /> },
-                    { path: "dashboard", element: <Dashboard /> },
                 ],
             },
         ],

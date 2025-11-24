@@ -1,6 +1,4 @@
-// import dotenv from "dotenv"
-// dotenv.config()
-import {renderToPipeableStream } from 'react-dom/server';
+import { renderToPipeableStream } from 'react-dom/server';
 import App from './src/App';
 const path = require('path');
 const express = require('express');
