@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./common/navbar/Navbar";
 import CartProvider from "./store/CartProvider"
 import { AuthProvider } from "./context/AuthContext";
+import Footer from "./common/footer/Footer"
 function App() {
 
   return (
@@ -11,6 +12,7 @@ function App() {
         <main>
           <Navbar />
           <Outlet />
+          <Footer />
         </main>
       </CartProvider>
     </AuthProvider>
