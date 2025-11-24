@@ -27,7 +27,7 @@ const Slide = () => {
 
     const animateText = (text, setTextFunction) => {
       let index = 0;
-      setTextFunction(""); // Clear existing text
+      setTextFunction("");
       const interval = setInterval(() => {
         if (index <= text.length) {
           setTextFunction(text.slice(0, index));
@@ -35,7 +35,7 @@ const Slide = () => {
         } else {
           clearInterval(interval);
         }
-      }, 30); // Adjust speed as needed
+      }, 30);
       return interval;
     };
 
@@ -45,12 +45,12 @@ const Slide = () => {
     // Animate subtitle after title
     setTimeout(() => {
       subtitleTimer = animateText(subtitle, setSubtitleText);
-    }, title.length * 30); // Wait until title animation completes
+    }, title.length * 30);
 
     // Animate button after subtitle
     setTimeout(() => {
       buttonTimer = animateText(button, setButtonText);
-    }, (title.length + subtitle.length) * 30); // Wait until subtitle animation completes
+    }, (title.length + subtitle.length) * 30);
 
     // Clear intervals on component unmount
     return () => {
@@ -59,11 +59,6 @@ const Slide = () => {
       clearInterval(buttonTimer);
     };
   }, [title, subtitle, button]);
-
-  const textVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
 
   const variants1 = {
     hidden: { rotateX: -90, opacity: 0 },

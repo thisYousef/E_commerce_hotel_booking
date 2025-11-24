@@ -2,7 +2,7 @@ section.forms {
   height: 700px;
   overflow: hidden;
   padding: 1rem;
-  margin: auto;
+  margin: 0 auto 12rem;
   transform: translate(0px, 20%);
   box-shadow: 15px 15px 30px 0px #eee;
   border-radius: 40px;

@@ -99,7 +99,6 @@ const Footer = () => {
         </div>
         {/* Footer Bottom (Copyright and Social) */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center">
-          {/* Copyright */}
           <p className="text-sm text-gray-500 order-2 sm:order-1 mt-6 sm:mt-0">
             &copy; {currentYear} Yousef shaban. All rights reserved.
           </p>

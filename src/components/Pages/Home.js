@@ -17,7 +17,6 @@ const Home = () => {
   useEffect(() => {
     // Simulate loading data
     const fetchData = async () => {
-      // Simulate a data fetch with a timeout
       await new Promise(resolve => setTimeout(resolve, 1000));
       setLoading(false);
     };
