@@ -4,7 +4,7 @@ const useUnsplashImages = (query, perPage, page, orientation) => {
   const [imagesApi, setImagesApi] = useState([]);
   const [error, setError] = useState(null);
 
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = process.env.REACT_APP_UNSPLASH_API_URL;
   const apiKey = process.env.REACT_APP_UNSPLASH_KEY;
 
   useEffect(() => {
