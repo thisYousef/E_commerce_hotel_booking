@@ -1,4 +1,4 @@
-import { Bed, Home, DollarSign, X, ShoppingCart, Info, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Bed, Home, ShoppingCart, Info } from 'lucide-react';
 
 export default function HotelCard({ hotel, onAddToCart, onShowDetails, isAdded }) {
     <div className="bg-white border border-gray-100 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 flex flex-col overflow-hidden" dir="ltr">
