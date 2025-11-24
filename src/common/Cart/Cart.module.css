@@ -20,7 +20,10 @@
 .checkout {
   margin: 10rem auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+.checkout > div {
+  margin: 0 4rem;
 }
 .empty p {
   color: #272727c9;
